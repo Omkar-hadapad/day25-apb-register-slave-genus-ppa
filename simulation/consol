@@ -1,0 +1,227 @@
+ncsim> 
+ncsim> database -open waves -into waves.shm -default
+Created default SHM database waves
+ncsim> probe -create -shm day25_tb.addr day25_tb.clk day25_tb.enable day25_tb.exp0 day25_tb.exp1 day25_tb.exp2 day25_tb.exp3 day25_tb.failed_checks day25_tb.passed_checks day25_tb.rdata day25_tb.ready day25_tb.rst day25_tb.sel day25_tb.total_checks day25_tb.wdata day25_tb.write
+Created probe 1
+ncsim> run
+DAY 25 APB-LIKE REGISTER SLAVE
+Columns: CHECK | EXPECTED | ACTUAL | RESULT
+
+---- TEST 1: RESET ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+         Reset ready low | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 2: IDLE / SETUP READY ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+              Idle ready | 00 | 00 | PASS
+             Setup ready | 00 | 00 | PASS
+
+---- TEST 3: VALID WRITES ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+
+---- TEST 4: READBACK ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+        Read Setup ready | 00 | 00 | PASS
+               Read data | a5 | a5 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 3c | 3c | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | f0 | f0 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 69 | 69 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 5: RETENTION / INDEPENDENCE ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 3c | 3c | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | f0 | f0 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 69 | 69 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 11 | 11 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 6: BLOCK IDLE / SETUP WRITES ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+     Blocked-write ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 11 | 11 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+     Blocked-write ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 3c | 3c | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 7: READ-ONLY ACCESS ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+          Read-only data | f0 | f0 | PASS
+         Read-only ready | 01 | 01 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | f0 | f0 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 8: INVALID READS ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 9: INVALID WRITE ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 11 | 11 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 3c | 3c | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | f0 | f0 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 69 | 69 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 10: OVERWRITE / BACK-TO-BACK ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 12 | 12 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 34 | 34 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 11: RESET AFTER WRITES ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+         Reset ready low | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+---- TEST 12: INVALID ACCESS WRITE ----
+CHECK                    | EXP | ACT | RESULT
+-------------------------+-----+-----+-------
+       Write Setup ready | 00 | 00 | PASS
+      Write Access ready | 01 | 01 | PASS
+        Write Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+        Read Setup ready | 00 | 00 | PASS
+               Read data | 00 | 00 | PASS
+       Read Access ready | 01 | 01 | PASS
+         Read Idle ready | 00 | 00 | PASS
+
+========== FINAL SUMMARY ==========
+TOTAL: 163 | PASS: 163 | FAIL: 0
+OVERALL: PASS
+===================================
+Simulation complete via $finish(1) at time 1371 NS + 0
+./day25_tb.v:278         $finish;
+ncsim> 
