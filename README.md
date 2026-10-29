@@ -1,30 +1,22 @@
-# Day 25 --- APB-Like Register Slave Design and Verification
+# DAY25 — APB-Like Register Slave Design and Verification — Verilog RTL & Cadence Genus
 
-```{=html}
 <p align="center">
-```
-**Digital VLSI • Verilog RTL • APB-Like Protocol • Functional
-Verification • Cadence Genus**
-```{=html}
+  <b>Digital VLSI • Verilog RTL • APB-Like Protocol • Functional Verification • ASIC Synthesis</b>
 </p>
-```
-```{=html}
+
 <p align="center">
-```
-`Specification → RTL → Testbench → Simulation → Synthesis → Area → Power → Timing → PPA Review`
-```{=html}
+  <code>Specification → RTL → Testbench → Simulation → Synthesis → Technology Mapping → Area → Power → Timing → PPA Review</code>
 </p>
-```
-```{=html}
+
 <p align="center">
-```
-`<img alt="Project" src="https://img.shields.io/badge/Project-APB--Like%20Register%20Slave-blue">`{=html}
-`<img alt="HDL" src="https://img.shields.io/badge/HDL-Verilog-8A2BE2">`{=html}
-`<img alt="Synthesis" src="https://img.shields.io/badge/Synthesis-Cadence%20Genus-orange">`{=html}
-`<img alt="Verification" src="https://img.shields.io/badge/Verification-163%20Pass%20%7C%200%20Fail-success">`{=html}
-```{=html}
+  <img alt="Project" src="https://img.shields.io/badge/Project-APB--Like%20Register%20Slave-blue">
+  <img alt="HDL" src="https://img.shields.io/badge/HDL-Verilog-8A2BE2">
+  <img alt="Synthesis" src="https://img.shields.io/badge/Synthesis-Cadence%20Genus-orange">
+  <img alt="Verification" src="https://img.shields.io/badge/Verification-163%20Pass%20%7C%200%20Fail-success">
 </p>
-```
+
+---
+
 
 ------------------------------------------------------------------------
 
@@ -761,18 +753,13 @@ Verification, FPGA Design, and Digital VLSI roles.
 
 ## 18. Author
 
-**Omkar Kalmesh Hadapad**\
+**Omkar Kalmesh Hadapad**  
 Electronics and Communication Engineering
 
 Digital VLSI • Verilog RTL • Functional Verification • Cadence Genus
 
-------------------------------------------------------------------------
+---
 
-```{=html}
 <p align="center">
-```
-**Day 25 --- APB-Like Register Slave Design, Verification and PPA
-Analysis**
-```{=html}
+  <b>Day 25 — APB-Like Register Slave: RTL Design, Functional Verification and PPA Analysis</b>
 </p>
-```
